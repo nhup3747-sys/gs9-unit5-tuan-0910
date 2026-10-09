@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS9 – Unit 5 – Luyện tập tuần 09/10</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#1e2a3a;--muted:#5d6878;--brand:#3b5bfd;--brand-d:#2a41c9;--good:#1a8f4d;--bad:#d33a3f;--warn:#f5a524;--line:#d9e0ec;--chip:#eef2fb;--r:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',Roboto,Arial,sans-serif;font-size:18px;line-height:1.55;padding-bottom:70px}
+.wrap{max-width:780px;margin:0 auto;padding:14px 12px 30px}
+.hero{background:linear-gradient(135deg,#3b5bfd,#6d3fe0);color:#fff;border-radius:var(--r);padding:20px 18px;margin-bottom:14px}
+.hero h1{margin:0 0 4px;font-size:1.35rem;line-height:1.3}
+.hero p{margin:0;font-size:.95rem;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.tip{background:#fff8e6;border:1px dashed var(--warn);border-radius:12px;padding:12px 14px;font-size:.95rem;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+label.f{display:block;font-size:.85rem;color:var(--muted);font-weight:600;margin-bottom:3px}
+input[type=text],textarea{width:100%;border:2px solid var(--line);border-radius:10px;padding:11px 12px;font-size:1rem;font-family:inherit;background:#fbfcfe}
+textarea{min-height:64px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--brand)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 0 6px}
+.bar{height:12px;border-radius:99px;background:#dde4f0;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#3b5bfd,#6d3fe0);transition:width .25s}
+.plabel{font-size:.85rem;color:var(--muted);text-align:right;margin-top:3px}
+.strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:.78rem;background:var(--chip);border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--muted);white-space:nowrap}
+.chip.done{background:#e6f7ec;border-color:#9bd9b4;color:#116b39;font-weight:700}
+.lv{margin:22px 0 2px;font-size:1.15rem;font-weight:800;color:var(--brand-d);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.lv .bd{font-size:.8rem;font-weight:700;border-radius:99px;padding:3px 10px;background:#eceff5;color:#8a93a3}
+.lv .bd.on{background:#fff2c4;color:#7a5200}
+.lvsub{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.q{padding:14px 0;border-top:1px solid var(--line)}
+.q:first-child{border-top:0}
+.qp{font-weight:600;margin-bottom:9px}
+.qn{color:var(--brand);margin-right:4px}
+.opts{display:grid;grid-template-columns:1fr;gap:8px}
+.opt{border:2px solid var(--line);background:#fbfcfe;border-radius:10px;padding:11px 13px;cursor:pointer;user-select:none;font-size:1rem}
+.opt:hover{border-color:var(--brand)}
+.opt.sel{border-color:var(--brand);background:var(--chip);font-weight:700}
+.opt.ok{border-color:var(--good);background:#e8f8ef;font-weight:700}
+.opt.no{border-color:var(--bad);background:#fdeceb}
+.q.good{background:#f3fcf6;border-radius:10px}.q.bad{background:#fdf5f5;border-radius:10px}
+.note{margin-top:8px;font-size:.92rem;padding:8px 10px;border-radius:8px}
+.note.ok{background:#e8f8ef;color:#0d6b37}.note.no{background:#fdeceb;color:#9c1f24}
+.xp{display:inline-block;font-weight:700;margin-left:6px}
+.btn{display:block;width:100%;background:var(--brand);color:#fff;border:0;border-radius:12px;padding:15px;font-size:1.05rem;font-weight:800;cursor:pointer}
+.btn:hover{background:var(--brand-d)}
+.btn.sec{background:#fff;color:var(--brand);border:2px solid var(--brand);margin-top:10px}
+.btn.sm{display:inline-block;width:auto;padding:9px 16px;font-size:.95rem;margin-top:8px}
+.submit{position:sticky;bottom:0;padding:12px 0 6px;background:linear-gradient(180deg,rgba(244,247,251,0),var(--bg) 35%)}
+.hidden{display:none!important}
+.err{color:var(--bad);font-size:.9rem;margin-top:6px}
+.res{text-align:center}
+.score{font-size:3.2rem;font-weight:900;color:var(--brand)}
+.rank{font-size:1.2rem;font-weight:800;margin:4px 0}
+.pass{background:#fffbe9;border:1px solid #f0dc8c;border-radius:12px;padding:12px 14px;margin:8px 0 14px;font-size:.98rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0}
+.status{font-size:.85rem;color:var(--muted);margin-top:8px}
+.foot{text-align:center;color:var(--muted);font-size:.8rem;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero"><h1>GS9 – Unit 5 – Luyện tập tuần 09/10</h1><p>Unit 5: Our Experiences · 40 câu · 35 phút · Trọng tâm: Hiện tại hoàn thành</p></div>
+<div class="tip"><b>Ghi nhớ nhanh:</b> <i>S + have/has + V3/-ed</i>. Dùng với <i>ever, never, just, already, yet, before, for + khoảng thời gian, since + mốc thời gian</i>. Không dùng với mốc quá khứ xác định (yesterday, last year).<br><small>🎮 Mỗi câu đúng +10 XP · 3 câu đúng liên tiếp → câu kế tiếp Combo x2 · Boss +20 XP/câu. XP chỉ để vui, điểm thật tính theo thang 10.</small></div>
+<div class="card">
+<div class="grid2">
+<div><label class="f">Trường</label><input type="text" id="school" placeholder="VD: THCS Nguyễn Văn Trỗi"></div>
+<div><label class="f">Lớp</label><input type="text" id="sclass" placeholder="VD: 9A1"></div>
+</div>
+<div style="margin-top:10px"><label class="f">Họ và tên *</label><input type="text" id="sname" placeholder="Nhập họ và tên của em"></div>
+<div class="err hidden" id="err"></div>
+</div>
+<div class="sticky">
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div class="plabel" id="plabel">Đã trả lời 0/40 câu</div>
+<div class="strip" id="strip"></div>
+</div>
+<div id="body"></div>
+<div class="submit" id="submitbar"><button class="btn" onclick="submitTest()">Nộp bài &amp; xem kết quả</button></div>
+<div class="card res hidden" id="result">
+<div class="score" id="rscore"></div>
+<div class="rank" id="rrank"></div>
+<div id="rsub"></div>
+<div class="badges" id="rbadges"></div>
+<div class="status" id="status"></div>
+<button class="btn sec" id="retrybtn" onclick="startPractice()">🔁 Luyện lại câu sai (chỉ để luyện, không gửi điểm)</button>
+</div>
+<div class="card hidden" id="practice"></div>
+<div class="foot">Kết quả được gửi tự động cho cô sau khi em nộp bài. Chúc em học tốt!</div>
+</div>
+<script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycby08od-VjK63bcLdiXGBgjz9imiBImjbBBKmjHqN1AnzfpBhEjFyItSniMfbPKm9TA/exec";
+const CLASS_LABEL="GS9";
+const TEST_NAME="GS9 Unit 5 Our Experiences - Luyen tap tuan 09/10 (40 cau)";
+const UNIT="5";
+const PASSAGE="Last summer, Mai took part in a two-week summer course at an army camp. At first she felt helpless because the instructors were very strict and she had to get up at five o'clock every morning. She also had to put up her own tent and cook simple meals. However, she soon made friends and learnt many soft skills, such as teamwork and how to stay calm in difficult situations. On the last day, the class went on an excursion to a mountain range and took a lot of photos of the scenery. Mai says it has been the most memorable experience of her life. Some of her cousins have decided to join the course next summer.";
+const LEVELS={"1": ["Level 1 – Khởi động", "⭐ Từ vựng", "Nối từ/cụm từ với nghĩa hoặc định nghĩa."], "2": ["Level 2 – Phát âm", "🔊 Phát âm", "Phần gạch chân và trọng âm."], "3": ["Level 3 – Từ vựng & ngữ pháp", "🧠 Ngữ pháp", "Chọn đáp án đúng A, B, C hoặc D."], "4": ["Level 4 – Biển báo / thông báo", "🪧 Biển báo", "Chọn câu đúng nghĩa với thông báo."], "5": ["Level 5 – Word form", "🔤 Word form", "Viết dạng đúng của từ trong ngoặc."], "6": ["Level 6 – Đồng nghĩa / trái nghĩa", "🔁 Đồng-Trái nghĩa", "Chọn từ đồng nghĩa hoặc trái nghĩa với từ gạch chân."], "7": ["Level 7 – Tìm lỗi sai", "🔍 Tìm lỗi", "Chọn phần (A, B, C, D) có lỗi sai."], "8": ["Level 8 – Viết lại câu", "✍️ Viết lại câu", "Viết lại câu sao cho nghĩa không đổi, bắt đầu bằng phần gợi ý."], "9": ["BOSS LEVEL – Đọc hiểu", "👑 Boss", "Đọc đoạn văn và trả lời. Điểm thưởng +20 XP mỗi câu!"]};
+const Q=[{"id": "u5_01", "lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>soft skills</b>", "e": "“soft skills” nghĩa là “kỹ năng mềm”.", "o": ["kỹ năng thuyết trình", "khóa huấn luyện", "kỹ năng mềm", "doanh trại quân đội"], "a": 2}, {"id": "u5_02", "lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>coral reef</b>", "e": "“coral reef” nghĩa là “rạn san hô”.", "o": ["dãy núi", "rạn san hô", "khu cắm trại", "phong cảnh"], "a": 1}, {"id": "u5_03", "lv": 1, "t": "mcq", "p": "Chọn từ/cụm từ đúng với định nghĩa: “a short trip made for pleasure or study”", "e": "Định nghĩa này mô tả “excursion”.", "o": ["campsite", "excursion", "scenery", "instructor"], "a": 1}, {"id": "u5_04", "lv": 1, "t": "mcq", "p": "Chọn nghĩa tiếng Việt đúng của: <b>unforgettable</b>", "e": "“unforgettable” nghĩa là “không thể quên”.", "o": ["khó chịu", "không thể quên", "xấu hổ", "bất lực"], "a": 1}, {"id": "u5_05", "lv": 1, "t": "mcq", "p": "Chọn từ/cụm từ đúng với định nghĩa: “to learn something by repeating it, without thinking about its meaning”", "e": "Định nghĩa này mô tả “learn by rote”.", "o": ["revise lessons", "take an excursion", "lack confidence", "learn by rote"], "a": 3}, {"id": "u5_06", "lv": 2, "t": "mcq", "p": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.<br>A. c<u>a</u>mp B. c<u>a</u>mpus C. <u>a</u>rmy D. embarr<u>a</u>ssing", "e": "“a” trong army đọc /ɑː/; các từ còn lại đọc /æ/.", "o": ["camp", "campus", "embarrassing", "army"], "a": 3}, {"id": "u5_07", "lv": 2, "t": "mcq", "p": "Chọn từ có phần gạch chân phát âm khác với các từ còn lại.<br>A. explor<u>ed</u> B. climb<u>ed</u> C. danc<u>ed</u> D. enjoy<u>ed</u>", "e": "“danced” đọc /t/; các từ còn lại đọc /d/.", "o": ["explored", "climbed", "danced", "enjoyed"], "a": 2}, {"id": "u5_08", "lv": 2, "t": "mcq", "p": "Chọn từ có trọng âm chính khác với các từ còn lại.<br>A. brilliant B. special C. terrible D. unpleasant", "e": "“unpleasant” nhấn âm 2; các từ còn lại nhấn âm 1.", "o": ["brilliant", "special", "unpleasant", "terrible"], "a": 2}, {"id": "u5_09", "lv": 2, "t": "mcq", "p": "Chọn từ có trọng âm chính khác với các từ còn lại.<br>A. scenery B. campsite C. outskirts D. excursion", "e": "“excursion” nhấn âm 2; các từ còn lại nhấn âm 1.", "o": ["scenery", "excursion", "campsite", "outskirts"], "a": 1}, {"id": "u5_10", "lv": 3, "t": "mcq", "p": "We have never ______ a gong show before this trip.", "e": "have never + V3: seen.", "o": ["seen", "saw", "see", "seeing"], "a": 0}, {"id": "u5_11", "lv": 3, "t": "mcq", "p": "Have you ever ______ snorkelling in the sea?", "e": "Have you ever + V3: tried.", "o": ["tried", "try", "trying", "tries"], "a": 0}, {"id": "u5_12", "lv": 3, "t": "mcq", "p": "My cousin ______ Da Lat twice. He loves the flowers there.", "e": "Chủ ngữ số ít + has + V3: has visited.", "o": ["have visited", "has visited", "visit", "was visiting"], "a": 1}, {"id": "u5_13", "lv": 3, "t": "mcq", "p": "I have been in this summer course ______ July.", "e": "since + mốc thời gian (July).", "o": ["for", "ago", "since", "during"], "a": 2}, {"id": "u5_14", "lv": 3, "t": "mcq", "p": "They have worked as volunteers ______ three years.", "e": "for + khoảng thời gian (three years).", "o": ["since", "ago", "for", "in"], "a": 2}, {"id": "u5_15", "lv": 3, "t": "mcq", "p": "Our class went on an ______ to a coral reef and saw thousands of colourful fish.", "e": "eco-tour = chuyến du lịch sinh thái.", "o": ["army camp", "soft skill", "eco-tour", "campsite"], "a": 2}, {"id": "u5_16", "lv": 3, "t": "mcq", "p": "The ______ was so strict that nobody dared to talk during the lesson.", "e": "instructor = người hướng dẫn.", "o": ["scenery", "campsite", "outskirts", "instructor"], "a": 3}, {"id": "u5_17", "lv": 3, "t": "mcq", "p": "We put up our tents at the ______ near the river.", "e": "campsite = khu cắm trại.", "o": ["mountain range", "campsite", "flora", "bully"], "a": 1}, {"id": "u5_18", "lv": 3, "t": "mcq", "p": "He did not revise, so his mind ______ blank in the exam.", "e": "went blank = đầu óc trống rỗng.", "o": ["went", "took", "gave", "made"], "a": 0}, {"id": "u5_19", "lv": 3, "t": "mcq", "p": "I lack ______, so I feel nervous when I speak in front of the class.", "e": "lack confidence = thiếu tự tin.", "o": ["scenery", "excursion", "flora", "confidence"], "a": 3}, {"id": "u5_20", "lv": 4, "t": "mcq", "p": "Đọc biển báo/thông báo và chọn câu đúng nghĩa.<br><i>SUMMER CAMP NOTICE: Please bring a hat, a raincoat and a water bottle. Mobile phones must be handed in at 8 p.m.</i>", "e": "Mang mũ, áo mưa, chai nước; nộp điện thoại lúc 8 giờ tối.", "o": ["Mobile phones are banned all day.", "Campers should bring sun and rain protection and give their phones to staff in the evening.", "Only staff need to bring water.", "Hats are not allowed at camp."], "a": 1}, {"id": "u5_21", "lv": 4, "t": "mcq", "p": "Đọc biển báo/thông báo và chọn câu đúng nghĩa.<br><i>DIVING CENTRE: Beginners must be accompanied by an instructor. No diving after 5 p.m.</i>", "e": "Người mới phải đi cùng người hướng dẫn; không lặn sau 5 giờ chiều.", "o": ["Beginners may dive alone.", "Instructors are not allowed to dive.", "Diving is allowed after 5 p.m.", "New divers cannot dive alone, and diving stops at 5 p.m."], "a": 3}, {"id": "u5_22", "lv": 5, "t": "fill", "p": "Learning by rote doesn't help us ______ (UNDERSTANDING) the lesson.", "e": "Sau “help us” dùng động từ: understand.", "acc": ["understand"], "ans": "understand"}, {"id": "u5_23", "lv": 5, "t": "fill", "p": "Taking part in the course gave me more ______ (CONFIDENT).", "e": "Sau “more” cần danh từ: confidence.", "acc": ["confidence"], "ans": "confidence"}, {"id": "u5_24", "lv": 5, "t": "fill", "p": "I felt really ______ (EMBARRASS) when I forgot my lines on stage.", "e": "Cảm giác của người → tính từ đuôi -ed: embarrassed.", "acc": ["embarrassed"], "ans": "embarrassed"}, {"id": "u5_25", "lv": 5, "t": "fill", "p": "The children ran ______ (EXCITE) to the beach.", "e": "Bổ nghĩa cho động từ “ran” cần trạng từ: excitedly.", "acc": ["excitedly"], "ans": "excitedly"}, {"id": "u5_26", "lv": 5, "t": "fill", "p": "The weather was ______ (PLEASANT), so we cancelled the climb.", "e": "Nghĩa phủ định hợp ngữ cảnh: unpleasant.", "acc": ["unpleasant"], "ans": "unpleasant"}, {"id": "u5_27", "lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ GẦN NGHĨA nhất với từ gạch chân.<br>The parachute jump was <u>thrilling</u>.", "e": "thrilling ≈ exciting (hồi hộp, thú vị).", "o": ["boring", "terrible", "quiet", "exciting"], "a": 3}, {"id": "u5_28", "lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ GẦN NGHĨA nhất với từ gạch chân.<br>She felt <u>helpless</u> when the boat started to sink.", "e": "helpless ≈ powerless (bất lực).", "o": ["calm", "proud", "powerless", "lucky"], "a": 2}, {"id": "u5_29", "lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ TRÁI NGHĨA với từ gạch chân.<br>The camp was <u>unpleasant</u> because it rained all week.", "e": "unpleasant trái nghĩa với enjoyable/pleasant.", "o": ["terrible", "strict", "enjoyable", "embarrassing"], "a": 2}, {"id": "u5_30", "lv": 6, "t": "mcq", "p": "Chọn từ/cụm từ TRÁI NGHĨA với từ gạch chân.<br>We had a <u>terrible</u> time on the boat.", "e": "terrible (tồi tệ) trái nghĩa với wonderful (tuyệt vời).", "o": ["awful", "wonderful", "boring", "strange"], "a": 1}, {"id": "u5_31", "lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>She <u>(A) has</u> <u>(B) lived</u> in Hue <u>(C) since</u> <u>(D) five years</u>.", "e": "since + mốc thời gian; for + khoảng thời gian → for five years.", "o": ["A", "B", "C", "D"], "a": 2}, {"id": "u5_32", "lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>Have you ever <u>(A) went</u> <u>(B) to</u> an army camp <u>(C) in</u> <u>(D) your life</u>?", "e": "Have you ever + V3: been (hoặc gone).", "o": ["A", "B", "C", "D"], "a": 0}, {"id": "u5_33", "lv": 7, "t": "mcq", "p": "Tìm phần có lỗi sai (A, B, C hoặc D).<br>My brother <u>(A) have</u> <u>(B) never</u> <u>(C) tried</u> <u>(D) skydiving</u>.", "e": "Chủ ngữ số ít → has never tried.", "o": ["A", "B", "C", "D"], "a": 0}, {"id": "u5_34", "lv": 8, "t": "rewrite", "p": "I started learning English 3 years ago.<br>→ I have ...", "e": "Started… ago → have + V3 + for + khoảng thời gian.", "acc": ["i have learned english for 3 years", "i have learnt english for 3 years", "i have learned english for three years", "i have learnt english for three years", "i have been learning english for 3 years", "i have been learning english for three years", "ive learned english for 3 years", "ive learnt english for 3 years"], "ans": "i have learned english for 3 years"}, {"id": "u5_35", "lv": 8, "t": "rewrite", "p": "This is the first time Nam has tried snorkelling.<br>→ Nam has never ...", "e": "The first time → has never + V3 + before.", "acc": ["nam has never tried snorkelling before", "nam has never tried snorkeling before"], "ans": "nam has never tried snorkelling before"}, {"id": "u5_36", "lv": 8, "t": "rewrite", "p": "She last visited a coral reef two years ago.<br>→ She has not ...", "e": "last… ago → has not + V3 + for + khoảng thời gian.", "acc": ["she has not visited a coral reef for two years", "she has not visited a coral reef since two years ago"], "ans": "she has not visited a coral reef for two years"}, {"id": "u5_37", "lv": 8, "t": "rewrite", "p": "We began living in this city in 2018.<br>→ We have ...", "e": "began… in 2018 → have lived… since 2018.", "acc": ["we have lived in this city since 2018", "we have been living in this city since 2018", "weve lived in this city since 2018", "weve been living in this city since 2018"], "ans": "we have lived in this city since 2018"}, {"id": "u5_38", "lv": 8, "t": "rewrite", "p": "The last time he went on an eco-tour was in 2022.<br>→ He has not ...", "e": "The last time… was in 2022 → has not + V3 + since 2022.", "acc": ["he has not gone on an eco-tour since 2022", "he has not been on an eco-tour since 2022"], "ans": "he has not gone on an eco-tour since 2022"}, {"id": "u5_39", "lv": 9, "t": "mcq", "p": "How did Mai feel at first?", "e": "Bài đọc: “At first she felt helpless”.", "o": ["She felt proud.", "She felt helpless.", "She felt bored.", "She felt lucky."], "a": 1}, {"id": "u5_40", "lv": 9, "t": "mcq", "p": "Which sentence is TRUE according to the passage?", "e": "Bài đọc: “learnt many soft skills”.", "o": ["Mai learnt soft skills at the camp.", "Mai stayed at the camp for two months.", "The instructors were very kind.", "Mai did not tell anyone about the course."], "a": 0}];
+const state={};
+let submitted=false, results={};
+function norm(s){return (s||"").toString().trim().toLowerCase().normalize('NFC').replace(/[.,!?;:'"“”‘’]/g,'').replace(/\s+/g,' ').trim();}
+function ok(q){
+  const v=state[q.id];
+  if(q.t==='mcq')return v===q.a;
+  const g=norm(v); if(!g)return false;
+  return q.acc.map(norm).includes(g);
+}
+function correctText(q){return q.t==='mcq'?q.o[q.a]:q.ans;}
+function lvQs(l){return Q.filter(q=>String(q.lv)===String(l));}
+function optsHtml(q,mode){return q.o.map((o,i)=>`<div class="opt" data-q="${q.id}" data-i="${i}" onclick="pick('${q.id}',${i},'${mode}')">${q.lv===7?o:o}</div>`).join('');}
+function qHtml(q,idx,mode){
+  let h=`<div class="q" id="${mode}-${q.id}"><div class="qp"><span class="qn">Câu ${idx}.</span>${q.p}</div>`;
+  if(q.t==='mcq')h+=`<div class="opts">${optsHtml(q,mode)}</div>`;
+  else if(q.t==='fill')h+=`<input type="text" id="in-${mode}-${q.id}" autocomplete="off" autocapitalize="off" placeholder="Nhập đáp án..." oninput="typed('${q.id}',this.value,'${mode}')">`;
+  else h+=`<textarea id="in-${mode}-${q.id}" placeholder="Viết lại câu..." oninput="typed('${q.id}',this.value,'${mode}')"></textarea>`;
+  if(mode==='p'&&q.t!=='mcq')h+=`<button class="btn sm" onclick="checkP('${q.id}')">Kiểm tra</button>`;
+  h+=`<div class="note hidden" id="note-${mode}-${q.id}"></div></div>`;
+  return h;
+}
+function build(){
+  let h='',n=0;
+  Object.keys(LEVELS).forEach(l=>{
+    const qs=lvQs(l); if(!qs.length)return;
+    const m=LEVELS[l];
+    h+=`<div class="lv"><span>${m[0]}</span><span class="bd" id="bd-${l}">${m[1]}</span></div><div class="lvsub">${m[2]}</div>`;
+    if(l==='9')h+=`<div class="card" style="background:#f7f9ff"><b>📖 Đọc đoạn văn:</b><p style="margin:8px 0 0">${PASSAGE}</p></div>`;
+    h+=`<div class="card">`;
+    qs.forEach((q,i)=>{n++;h+=qHtml(q,i+1,'m');});
+    h+=`</div>`;
+  });
+  document.getElementById('body').innerHTML=h; progress();
+}
+function pick(id,i,mode){
+  const q=Q.find(x=>x.id===id);
+  if(mode==='m'){ if(submitted)return; state[id]=i;
+    document.querySelectorAll(`.opt[data-q="${id}"]`).forEach(e=>{ if(e.closest('#practice'))return; e.classList.toggle('sel',+e.dataset.i===i);}); progress();}
+  else{ const box=document.getElementById('p-'+id); const good=(i===q.a);
+    box.querySelectorAll('.opt').forEach(e=>{const k=+e.dataset.i; if(k===q.a)e.classList.add('ok'); else if(k===i)e.classList.add('no');});
+    const nt=document.getElementById('note-p-'+id); nt.classList.remove('hidden','ok','no');
+    nt.classList.add(good?'ok':'no'); nt.innerHTML=good?'✅ Đúng rồi!':`❌ Chưa đúng. Đáp án: <b>${q.o[q.a]}</b><br>${q.e}`;}
+}
+const pst={};
+function typed(id,v,mode){ if(mode==='m'){state[id]=v;progress();} else pst[id]=v;}
+function checkP(id){const q=Q.find(x=>x.id===id);const g=norm(pst[id]);const good=!!g&&q.acc.map(norm).includes(g);
+  const nt=document.getElementById('note-p-'+id); nt.classList.remove('hidden','ok','no'); nt.classList.add(good?'ok':'no');
+  nt.innerHTML=good?'✅ Đúng rồi!':`❌ Chưa đúng. Đáp án: <b>${q.ans}</b><br>${q.e}`;}
+function answered(q){const v=state[q.id];return v!==undefined&&v!==null&&String(v).trim()!=='';}
+function progress(){
+  const a=Q.filter(answered).length, t=Q.length, p=Math.round(a/t*100);
+  document.getElementById('fill').style.width=p+'%';
+  document.getElementById('plabel').textContent=`Đã trả lời ${a}/${t} câu (${p}%)`;
+  let s='';
+  Object.keys(LEVELS).forEach(l=>{const qs=lvQs(l);const d=qs.filter(answered).length;const full=d===qs.length;
+    s+=`<span class="chip ${full?'done':''}">${full?LEVELS[l][1].split(' ')[0]:'L'+(l==='9'?'B':l)} ${d}/${qs.length}</span>`;
+    const bd=document.getElementById('bd-'+l); if(bd)bd.classList.toggle('on',full);});
+  document.getElementById('strip').innerHTML=s;
+}
+function submitTest(){
+  const name=document.getElementById('sname').value.trim(), err=document.getElementById('err');
+  if(!name){err.textContent='Em vui lòng nhập Họ và tên trước khi nộp bài nhé.';err.classList.remove('hidden');document.getElementById('sname').focus();return;}
+  err.classList.add('hidden'); submitted=true;
+  let correct=0,xp=0,streak=0,comboHits=0,maxxp=0;
+  Q.forEach((q,i)=>{
+    const good=ok(q), base=q.lv===9?20:10; let gain=0,combo=false;
+    if(good){correct++; if(streak>=3){gain=base*2;combo=true;comboHits++;streak=0;} else {gain=base;streak++;}}
+    else streak=0;
+    xp+=gain; results[q.id]={good,gain,combo};
+    const box=document.getElementById('m-'+q.id), nt=document.getElementById('note-m-'+q.id);
+    box.classList.add(good?'good':'bad');
+    if(q.t==='mcq')box.querySelectorAll('.opt').forEach(e=>{const k=+e.dataset.i;if(k===q.a)e.classList.add('ok');else if(k===state[q.id])e.classList.add('no');});
+    nt.classList.remove('hidden','ok','no'); nt.classList.add(good?'ok':'no');
+    nt.innerHTML=good?`✅ Chính xác! <span class="xp">+${gain} XP${combo?' (Combo x2 🔥)':''}</span>`:`❌ Chưa đúng. Đáp án đúng: <b>${correctText(q)}</b><br>💡 ${q.e}`;
+  });
+  const total=Q.length, score=Math.round(correct/total*100)/10, score10=score.toFixed(1), pct=correct/total*100;
+  const rank=pct>=90?`🏆 Sẵn sàng thi vào 10 – Unit ${UNIT}`:pct>=70?'⚔️ Chiến binh':'💪 Cố lên – làm lại để lên hạng';
+  document.getElementById('rscore').textContent=score10+'/10';
+  document.getElementById('rrank').textContent=rank;
+  document.getElementById('rsub').innerHTML=`Đúng ${correct}/${total} câu · ⚡ ${xp} XP${comboHits?` · 🔥 ${comboHits} lần Combo x2`:''}`;
+  let b='';
+  Object.keys(LEVELS).forEach(l=>{const qs=lvQs(l);const g=qs.filter(q=>results[q.id].good).length;
+    b+=`<span class="chip ${g===qs.length?'done':''}">${LEVELS[l][1]} ${g}/${qs.length}</span>`;});
+  document.getElementById('rbadges').innerHTML=b;
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('submitbar').classList.add('hidden');
+  if(Q.every(q=>results[q.id].good))document.getElementById('retrybtn').classList.add('hidden');
+  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+  const st=document.getElementById('status'); st.textContent='Đang gửi kết quả...';
+  const payload={className:CLASS_LABEL,testName:TEST_NAME,school:document.getElementById('school').value.trim(),studentClass:document.getElementById('sclass').value.trim(),name:name,correct:correct,total:total,score:score,score10:score10,timestamp:new Date().toISOString()};
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+   .then(()=>{st.textContent='Đã gửi kết quả về hệ thống.';}).catch(()=>{st.textContent='Gửi thất bại – em hãy chụp màn hình điểm và báo cô.';});
+}
+function startPractice(){
+  const wrong=Q.filter(q=>!results[q.id].good); const p=document.getElementById('practice');
+  let h=`<h3 style="margin-top:0">🔁 Luyện lại câu sai (${wrong.length} câu) – chỉ để luyện, không gửi điểm</h3>`;
+  wrong.forEach((q,i)=>{h+=qHtml(q,i+1,'p');});
+  p.innerHTML=h; p.classList.remove('hidden'); p.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.addEventListener('DOMContentLoaded',build);
+</script>
+</body>
+</html>
